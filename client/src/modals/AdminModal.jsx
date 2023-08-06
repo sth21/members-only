@@ -3,19 +3,17 @@ import { Form } from "react-router-dom";
 import { useState } from "react";
 import Closeable from "./Closeable";
 
-function MembershipModal() {
+function AdminModal() {
   const [secret, setSecret] = useState("");
 
   return (
     <Closeable>
-      <Form action="/auth/membership" method="POST">
+      <Form action="/auth/admin" method="POST">
         <div>
-          <label for="membershipPassword">
-            Membership Password (The Odin Project)
-          </label>
+          <label for="adminPassword">Admin Password (The Odin Project)</label>
           <input
             type="text"
-            id="membershipPassword"
+            id="adminPassword"
             value={secret}
             required
             onChange={(e) => setSecret(e.target.value)}
@@ -27,4 +25,4 @@ function MembershipModal() {
   );
 }
 
-export default MembershipModal;
+export default AdminModal;

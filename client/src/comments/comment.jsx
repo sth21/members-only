@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function Message({ comment, memberStatus }) {
+function Comment({ comment, memberStatus }) {
   return (
     <div>
       <h2>{comment.title}</h2>
@@ -15,7 +15,7 @@ function Message({ comment, memberStatus }) {
   );
 }
 
-Message.propTypes = {
+Comment.propTypes = {
   memberStatus: PropTypes.bool,
   comment: PropTypes.shape({
     username: PropTypes.string,
@@ -25,4 +25,4 @@ Message.propTypes = {
   }),
 };
 
-export default Message;
+export default Comment;

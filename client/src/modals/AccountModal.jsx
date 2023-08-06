@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
+import { Form } from "react-router-dom";
 import LogoutButton from "../controls/LogoutButton";
+import Closeable from "./Closeable";
 
 function AccountModal({ currentUser }) {
   return (
@@ -20,3 +22,13 @@ function AccountModal({ currentUser }) {
     </div>
   );
 }
+
+AccountModal.propTypes = {
+  currentUser: PropTypes.shape({
+    username: PropTypes.string,
+    memberStatus: PropTypes.bool,
+    adminStatus: PropTypes.bool,
+  }),
+};
+
+export default AccountModal;
