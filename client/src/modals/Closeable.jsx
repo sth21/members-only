@@ -12,6 +12,7 @@ function Closeable({ setModal, children }) {
 
 Closeable.propTypes = {
   setModal: PropTypes.func,
+  children: PropTypes.arrayOf(PropTypes.element),
 };
 
 export default Closeable;

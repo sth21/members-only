@@ -1,16 +1,17 @@
 import PropTypes from "prop-types";
-import { Form } from "react-router-dom";
+import ModalForm from "./ModalForm";
 import { useState } from "react";
 import Closeable from "./Closeable";
+import ModalForm from "./ModalForm";
 
-function LoginModal() {
+function SignupModal() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
   return (
     <Closeable>
-      <Form action="/auth/login" method="POST">
+      <ModalForm action="/auth/login">
         <div>
           <label for="username">Username</label>
           <input
@@ -42,7 +43,7 @@ function LoginModal() {
           />
         </div>
         <button type="submit">Submit</button>
-      </Form>
+      </ModalForm>
     </Closeable>
   );
 }

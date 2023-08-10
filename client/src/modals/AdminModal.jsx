@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Form } from "react-router-dom";
+import ModalForm from "./ModalForm";
 import { useState } from "react";
 import Closeable from "./Closeable";
 
@@ -8,7 +8,7 @@ function AdminModal() {
 
   return (
     <Closeable>
-      <Form action="/auth/admin" method="POST">
+      <ModalForm action="/auth/admin">
         <div>
           <label for="adminPassword">Admin Password (The Odin Project)</label>
           <input
@@ -20,7 +20,7 @@ function AdminModal() {
           />
         </div>
         <button type="submit">Submit</button>
-      </Form>
+      </ModalForm>
     </Closeable>
   );
 }

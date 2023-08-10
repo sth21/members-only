@@ -11,4 +11,7 @@ function ModalForm({ action, children }) {
 
 ModalForm.propTypes = {
   action: PropTypes.string,
+  children: PropTypes.arrayOf(PropTypes.element),
 };
+
+export default ModalForm;

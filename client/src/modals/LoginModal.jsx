@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
-import { Form } from "react-router-dom";
 import { useState } from "react";
 import Closeable from "./Closeable";
+import ModalForm from "./ModalForm";
 
 function LoginModal() {
   const [username, setUsername] = useState("");
@@ -9,7 +9,7 @@ function LoginModal() {
 
   return (
     <Closeable>
-      <Form action="/auth/login" method="POST">
+      <ModalForm action="/auth/login">
         <div>
           <label for="username">username</label>
           <input
@@ -31,7 +31,7 @@ function LoginModal() {
           />
         </div>
         <button type="submit">Submit</button>
-      </Form>
+      </ModalForm>
     </Closeable>
   );
 }

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
-import { Form } from "react-router-dom";
 import { useState } from "react";
 import Closeable from "./Closeable";
+import ModalForm from "./ModalForm";
 
 function CommentModal() {
   const [title, setTitle] = useState("");
@@ -9,7 +9,7 @@ function CommentModal() {
 
   return (
     <Closeable>
-      <Form action="/comment/new" method="POST">
+      <ModalForm action="/comment/new">
         <div>
           <label for="commentTitle">Title</label>
           <input
@@ -31,7 +31,7 @@ function CommentModal() {
           />
         </div>
         <button type="submit">Submit</button>
-      </Form>
+      </ModalForm>
     </Closeable>
   );
 }
