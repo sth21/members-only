@@ -5,21 +5,15 @@ import Closeable from "./Closeable";
 import ModalForm from "./ModalForm";
 
 function SignupModal() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-
   return (
     <Closeable>
-      <ModalForm action="/auth/login">
+      <ModalForm action="/signup">
         <div>
           <label for="username">Username</label>
           <input
             type="text"
             id="username"
-            value={username}
             required
-            onChange={(e) => setUsername(e.target.value)}
           />
         </div>
         <div>
@@ -27,9 +21,7 @@ function SignupModal() {
           <input
             type="text"
             id="password"
-            value={password}
             required
-            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <div>
@@ -37,9 +29,7 @@ function SignupModal() {
           <input
             type="text"
             id="confirmPassword"
-            value={confirmPassword}
             required
-            onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </div>
         <button type="submit">Submit</button>

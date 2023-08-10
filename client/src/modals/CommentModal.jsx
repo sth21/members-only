@@ -1,23 +1,20 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useActionData } from "react-router-dom";
 import Closeable from "./Closeable";
 import ModalForm from "./ModalForm";
 
 function CommentModal() {
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const errors = useActionData();
 
   return (
     <Closeable>
-      <ModalForm action="/comment/new">
+      <ModalForm action="/comment">
         <div>
           <label for="commentTitle">Title</label>
           <input
             type="text"
             id="commentTitle"
-            value={title}
             required
-            onChange={(e) => setTitle(e.target.value)}
           />
         </div>
         <div>
@@ -25,9 +22,7 @@ function CommentModal() {
           <input
             type="text"
             id="commentTitle"
-            value={content}
             required
-            onChange={(e) => setContent(e.target.value)}
           />
         </div>
         <button type="submit">Submit</button>

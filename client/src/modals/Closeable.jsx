@@ -1,17 +1,24 @@
 import PropTypes from "prop-types";
+import ModalContext from "../context/modalContext";
+import { Navigate } from "react-router-dom";
 
-function Closeable({ setModal, children }) {
+function Closeable({ children }) {
+  const [closeModal, setCloseModal] = useState(false);
+  
   function close(e) {
     if (e.target === e.currentTarget) {
-      setModal("");
+      setCloseModal(true);
     }
   }
 
-  return <div onClick={close}>{...children}</div>;
+  return (
+    <ModalContext.Provider value={[ closeModal, setCloseModal ]}>
+      <div onClick={close}>{...children}</div>;
+    </ModalContext.Provider>
+  )
 }
 
 Closeable.propTypes = {
-  setModal: PropTypes.func,
   children: PropTypes.arrayOf(PropTypes.element),
 };
 
