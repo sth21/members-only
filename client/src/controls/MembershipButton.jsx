@@ -1,11 +1,7 @@
-import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
-function MembershipButton({ setModal }) {
-  return <button onClick={() => setModal("Membership")}>Join Club</button>;
+export default function MembershipButton() {
+  const navigate = useNavigate();
+
+  return <button onClick={() => navigate("/membership")}>Join Club</button>;
 }
-
-MembershipButton.propTypes = {
-  setModal: PropTypes.func,
-};
-
-export default MembershipButton;

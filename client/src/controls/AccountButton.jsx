@@ -1,11 +1,8 @@
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
-function AccountButton({ setModal }) {
-  return <button onClick={() => setModal("Account")}>View Account</button>;
+export default function AccountButton() {
+  const navigate = useNavigate();
+
+  return <button onClick={() => navigate("/account")}>View Account</button>;
 }
-
-AccountButton.propTypes = {
-  setModal: PropTypes.func,
-};
-
-export default AccountButton;
