@@ -17,7 +17,7 @@ function SignupModal() {
           <input type="text" id="password" required />
         </div>
         <div>
-          <label for="username">Confirm Password</label>
+          <label for="confirmPassword">Confirm Password</label>
           <input type="text" id="confirmPassword" required />
         </div>
         <button type="submit">Submit</button>
