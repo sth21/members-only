@@ -11,9 +11,7 @@ function Closeable({ children }) {
     }
   }
 
-  return (
-      <div onClick={close}>{...children}</div>
-  )
+  return <div onClick={close}>{...children}</div>;
 }
 
 Closeable.propTypes = {

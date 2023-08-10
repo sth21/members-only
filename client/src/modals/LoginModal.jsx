@@ -9,19 +9,11 @@ function LoginModal() {
       <ModalForm action="login">
         <div>
           <label for="username">username</label>
-          <input
-            type="text"
-            id="username"
-            required
-          />
+          <input type="text" id="username" required />
         </div>
         <div>
           <label for="password">username</label>
-          <input
-            type="text"
-            id="password"
-            required
-          />
+          <input type="text" id="password" required />
         </div>
         <button type="submit">Submit</button>
       </ModalForm>

@@ -1,28 +1,21 @@
 import PropTypes from "prop-types";
 
-function Comment({ comment, memberStatus }) {
+function Comment({ title, username, content, time }) {
   return (
     <div>
-      <h2>{comment.title}</h2>
-      <p>{memberStatus ? `by ${comment.username}` : comment.content}</p>
-      <p>
-        {memberStatus
-          ? comment.time
-          : "Become a member to see who wrote this comment"}
-      </p>
-      {memberStatus ? <p>{comment.content}</p> : <></>}
+      <h2>{title}</h2>
+      <p>{username}</p>
+      <p>{time}</p>
+      <p>{content}</p>
     </div>
   );
 }
 
 Comment.propTypes = {
-  memberStatus: PropTypes.bool,
-  comment: PropTypes.shape({
-    username: PropTypes.string,
-    title: PropTypes.string,
-    content: PropTypes.string,
-    time: PropTypes.instanceOf(Date),
-  }),
+  title: PropTypes.string,
+  username: PropTypes.string,
+  content: PropTypes.string,
+  time: PropTypes.instanceOf(Date),
 };
 
 export default Comment;

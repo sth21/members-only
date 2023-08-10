@@ -10,27 +10,15 @@ function SignupModal() {
       <ModalForm action="/signup">
         <div>
           <label for="username">Username</label>
-          <input
-            type="text"
-            id="username"
-            required
-          />
+          <input type="text" id="username" required />
         </div>
         <div>
           <label for="password">Password</label>
-          <input
-            type="text"
-            id="password"
-            required
-          />
+          <input type="text" id="password" required />
         </div>
         <div>
           <label for="username">Confirm Password</label>
-          <input
-            type="text"
-            id="confirmPassword"
-            required
-          />
+          <input type="text" id="confirmPassword" required />
         </div>
         <button type="submit">Submit</button>
       </ModalForm>

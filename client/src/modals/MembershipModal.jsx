@@ -10,11 +10,7 @@ function MembershipModal() {
           <label for="membershipPassword">
             Membership Password (The Odin Project)
           </label>
-          <input
-            type="text"
-            id="membershipPassword"
-            required
-          />
+          <input type="text" id="membershipPassword" required />
         </div>
         <button type="submit">Submit</button>
       </ModalForm>

@@ -11,19 +11,11 @@ function CommentModal() {
       <ModalForm action="/comment">
         <div>
           <label for="commentTitle">Title</label>
-          <input
-            type="text"
-            id="commentTitle"
-            required
-          />
+          <input type="text" id="commentTitle" required />
         </div>
         <div>
           <label for="commentContent">Title</label>
-          <input
-            type="text"
-            id="commentTitle"
-            required
-          />
+          <input type="text" id="commentTitle" required />
         </div>
         <button type="submit">Submit</button>
       </ModalForm>
