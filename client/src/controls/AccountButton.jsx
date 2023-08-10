@@ -7,3 +7,5 @@ function AccountButton({ setModal }) {
 AccountButton.propTypes = {
   setModal: PropTypes.func,
 };
+
+export default AccountButton;
