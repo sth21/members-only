@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import ModalContext from "../context/modalContext";
 import { useNavigate } from "react-router-dom";
 
 function Closeable({ children }) {
@@ -11,7 +10,7 @@ function Closeable({ children }) {
     }
   }
 
-  return <div onClick={close}>{...children}</div>;
+  return <div onClick={close}>{children}</div>;
 }
 
 Closeable.propTypes = {

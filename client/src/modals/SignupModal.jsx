@@ -2,9 +2,8 @@ import PropTypes from "prop-types";
 import ModalForm from "./ModalForm";
 import { useState } from "react";
 import Closeable from "./Closeable";
-import ModalForm from "./ModalForm";
 
-function SignupModal() {
+export default function SignupModal() {
   return (
     <Closeable>
       <ModalForm action="/signup">
@@ -25,5 +24,3 @@ function SignupModal() {
     </Closeable>
   );
 }
-
-export default SignupModal;

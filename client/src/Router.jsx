@@ -12,7 +12,7 @@ import GeneralAction from "./actions/GeneralAction";
 
 const router = createBrowserRouter([
   {
-    index,
+    path: "/",
     element: <Layout />,
     loader: CommentLoader,
     errorElement: <ErrorPage />,
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
           await GeneralAction(
             request,
             ["username", "password"],
-            "localhost:3000/auth/login"
+            "http://localhost:3000/auth/login"
           ),
       },
       {
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
           await GeneralAction(
             request,
             ["username", "password", "confirmPassword"],
-            "localhost:3000/auth/signup"
+            "http://localhost:3000/auth/signup"
           ),
       },
       {
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
           await GeneralAction(
             request,
             ["membershipPassword"],
-            "localhost:3000/permissions/membership"
+            "http://localhost:3000/permissions/membership"
           ),
       },
       {
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
           await GeneralAction(
             request,
             ["adminPassword"],
-            "localhost:3000/permissions/admin"
+            "http://localhost:3000/permissions/admin"
           ),
       },
       {
@@ -64,7 +64,7 @@ const router = createBrowserRouter([
           await GeneralAction(
             request,
             ["commentTitle", "commentContent"],
-            "localhost:3000/comments/add"
+            "http://localhost:3000/comments/add"
           ),
       },
     ],

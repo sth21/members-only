@@ -8,11 +8,11 @@ function LoginModal() {
     <Closeable>
       <ModalForm action="login">
         <div>
-          <label for="username">username</label>
+          <label for="username">Username</label>
           <input type="text" id="username" required />
         </div>
         <div>
-          <label for="password">username</label>
+          <label for="password">Password</label>
           <input type="text" id="password" required />
         </div>
         <button type="submit">Submit</button>

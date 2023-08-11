@@ -47,7 +47,7 @@ function NavButtonGroup({ isUser, isMember, isAdmin }) {
   }
 }
 
-NavBar.propTypes = {
+Navbar.propTypes = {
   isUser: PropTypes.bool,
   isMember: PropTypes.bool,
   isAdmin: PropTypes.bool,
