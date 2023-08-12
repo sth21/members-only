@@ -2,8 +2,11 @@ import PropTypes from "prop-types";
 import ModalForm from "./ModalForm";
 import { useState } from "react";
 import Closeable from "./Closeable";
+import { useActionData } from "react-router-dom";
 
 export default function SignupModal() {
+  const errors = useActionData();
+
   return (
     <Closeable>
       <ModalForm action="/signup">

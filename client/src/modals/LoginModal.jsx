@@ -7,8 +7,6 @@ import ModalForm from "./ModalForm";
 function LoginModal() {
   const errors = useActionData();
 
-  console.log(errors);
-
   return (
     <Closeable>
       <ModalForm action="/login">

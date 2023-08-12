@@ -7,18 +7,14 @@ import { Outlet } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function Layout() {
-  const [user, setUser] = useState(null);
-  const comments = useLoaderData();
+  const { user, comments } = useLoaderData();
+  const { isUser, isMember, isAdmin } = user;
 
   return (
     <>
       <ToastContainer autoClose={5000} />
       <Outlet />
-      <Navbar
-        isUser={user !== null}
-        isMember={user !== null && user.memberStatus}
-        isAdmin={user !== null && user.adminStatus}
-      />
+      <Navbar isUser={isUser} isMember={isMember} isAdmin={isAdmin} />
       <Feed comments={comments} />
     </>
   );

@@ -1,4 +1,5 @@
 import { toast } from "react-toastify";
+import { redirect } from "react-router-dom";
 
 export default async function GeneralAction(request, fields, route) {
   const data = await request.formData();
@@ -21,7 +22,9 @@ export default async function GeneralAction(request, fields, route) {
     });
 
     json = await response.json();
-  } catch (err) {}
+  } catch (err) {
+    console.log(err);
+  }
 
   console.log(json);
 
@@ -37,7 +40,6 @@ export default async function GeneralAction(request, fields, route) {
   }
 
   // all good!
-
   toast.success(json.msg, { position: toast.POSITION.TOP_RIGHT });
-  redirect("/");
+  return redirect("/");
 }

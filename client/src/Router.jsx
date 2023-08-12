@@ -6,7 +6,8 @@ import MembershipModal from "./modals/MembershipModal";
 import AdminModal from "./modals/AdminModal";
 import CommentModal from "./modals/CommentModal";
 import Layout from "./layout/Layout";
-import CommentLoader from "./loaders/GeneralLoader";
+import CommentLoader from "./loaders/CommentLoader";
+import UserLoader from "./loaders/UserLoader";
 import ErrorPage from "./ErrorPage";
 import GeneralAction from "./actions/GeneralAction";
 
@@ -14,7 +15,13 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
-    loader: CommentLoader,
+    loader: async () => {
+      const [comments, user] = await Promise.all([
+        CommentLoader(),
+        UserLoader(),
+      ]);
+      return { comments, user };
+    },
     children: [
       {
         path: "/login",

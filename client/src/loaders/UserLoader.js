@@ -1,0 +1,8 @@
+export default async function UserLoader() {
+  const req = await fetch("http://localhost:3000/user", {
+    mode: "cors",
+  });
+  const data = await req.json();
+
+  return data;
+}

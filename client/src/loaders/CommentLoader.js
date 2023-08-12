@@ -1,4 +1,4 @@
-export default async function GeneralLoader() {
+export default async function CommentLoader() {
   const req = await fetch("http://localhost:3000/comments", {
     mode: "cors",
   });
