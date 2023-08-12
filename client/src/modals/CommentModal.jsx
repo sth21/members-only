@@ -10,12 +10,17 @@ function CommentModal() {
     <Closeable>
       <ModalForm action="/comment">
         <div>
-          <label for="commentTitle">Title</label>
-          <input type="text" id="commentTitle" required />
+          <label htmlFor="commentTitle">Title</label>
+          <input type="text" name="commentTitle" id="commentTitle" required />
         </div>
         <div>
-          <label for="commentContent">Title</label>
-          <input type="text" id="commentTitle" required />
+          <label htmlFor="commentContent">Title</label>
+          <input
+            type="text"
+            name="commentContent"
+            id="commentContent"
+            required
+          />
         </div>
         <button type="submit">Submit</button>
       </ModalForm>

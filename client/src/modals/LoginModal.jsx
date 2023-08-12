@@ -1,19 +1,24 @@
 import PropTypes from "prop-types";
+import { useActionData } from "react-router-dom";
 import { useState } from "react";
 import Closeable from "./Closeable";
 import ModalForm from "./ModalForm";
 
 function LoginModal() {
+  const errors = useActionData();
+
+  console.log(errors);
+
   return (
     <Closeable>
-      <ModalForm action="login">
+      <ModalForm action="/login">
         <div>
-          <label for="username">Username</label>
-          <input type="text" id="username" required />
+          <label htmlFor="username">Username</label>
+          <input type="text" name="username" id="username" required />
         </div>
         <div>
-          <label for="password">Password</label>
-          <input type="text" id="password" required />
+          <label htmlFor="password">Password</label>
+          <input type="text" name="password" id="password" required />
         </div>
         <button type="submit">Submit</button>
       </ModalForm>

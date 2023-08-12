@@ -8,16 +8,21 @@ export default function SignupModal() {
     <Closeable>
       <ModalForm action="/signup">
         <div>
-          <label for="username">Username</label>
-          <input type="text" id="username" required />
+          <label htmlFor="username">Username</label>
+          <input name="username" type="text" id="username" required />
         </div>
         <div>
-          <label for="password">Password</label>
-          <input type="text" id="password" required />
+          <label htmlFor="password">Password</label>
+          <input name="password" type="text" id="password" required />
         </div>
         <div>
-          <label for="confirmPassword">Confirm Password</label>
-          <input type="text" id="confirmPassword" required />
+          <label htmlFor="confirmPassword">Confirm Password</label>
+          <input
+            name="confirmPassword"
+            type="text"
+            id="confirmPassword"
+            required
+          />
         </div>
         <button type="submit">Submit</button>
       </ModalForm>

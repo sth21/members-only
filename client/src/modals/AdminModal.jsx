@@ -9,8 +9,10 @@ function AdminModal() {
     <Closeable>
       <ModalForm action="/admin">
         <div>
-          <label for="adminPassword">Admin Password (The Odin Project)</label>
-          <input type="text" id="adminPassword" required />
+          <label htmlFor="adminPassword">
+            Admin Password (The Odin Project)
+          </label>
+          <input name="adminPassword" type="text" id="adminPassword" required />
         </div>
         <button type="submit">Submit</button>
       </ModalForm>

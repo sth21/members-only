@@ -1,32 +1,43 @@
+import { toast } from "react-toastify";
+
 export default async function GeneralAction(request, fields, route) {
   const data = await request.formData();
 
   const submission = {};
 
-  fields.forEach((field) => (submission[field] = data.get(field)));
-
-  const response = await fetch(route, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(submission),
+  fields.forEach((field) => {
+    submission[field] = data.get(field);
   });
 
-  const json = await response.json();
+  let json;
+
+  try {
+    const response = await fetch(route, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(submission),
+    });
+
+    json = await response.json();
+  } catch (err) {}
+
+  console.log(json);
 
   // need to render error page
-  if (json.isFatal) {
+  if (!json || json.isFatal) {
     throw new Error();
   }
 
-  toast(json.msg);
-
   // errors
   if (json.errors.length > 0) {
+    toast.error(json.msg, { position: toast.POSITION.TOP_RIGHT });
     return json.errors;
   }
 
   // all good!
+
+  toast.success(json.msg, { position: toast.POSITION.TOP_RIGHT });
   redirect("/");
 }

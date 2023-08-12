@@ -7,10 +7,15 @@ function MembershipModal() {
     <Closeable>
       <ModalForm action="/membership">
         <div>
-          <label for="membershipPassword">
+          <label htmlFor="membershipPassword">
             Membership Password (The Odin Project)
           </label>
-          <input type="text" id="membershipPassword" required />
+          <input
+            type="text"
+            name="membershipPassword"
+            id="membershipPassword"
+            required
+          />
         </div>
         <button type="submit">Submit</button>
       </ModalForm>

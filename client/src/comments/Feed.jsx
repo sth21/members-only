@@ -3,6 +3,13 @@ import Comment from "./Comment";
 import HiddenComment from "./HiddenComment";
 
 function Feed({ isMember, comments }) {
+  if (comments.length === 0)
+    return (
+      <>
+        <p>Lucky you! Be the first one to comment!</p>
+      </>
+    );
+
   if (isMember)
     return (
       <>
