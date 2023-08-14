@@ -12,10 +12,13 @@ export default function Layout() {
 
   return (
     <>
+      <p>User: {isUser ? "true" : "false"}</p>
+      <p>Member: {isMember ? "true" : "false"}</p>
+      <p>Admin: {isAdmin ? "true" : "false"}</p>
       <ToastContainer autoClose={5000} />
       <Outlet />
       <Navbar isUser={isUser} isMember={isMember} isAdmin={isAdmin} />
-      <Feed comments={comments} />
+      <Feed comments={comments} isMember={isMember} />
     </>
   );
 }

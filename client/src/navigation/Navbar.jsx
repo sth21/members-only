@@ -4,6 +4,7 @@ import AccountButton from "../controls/AccountButton";
 import AdminButton from "../controls/AdminButton";
 import SignupButton from "../controls/SignupButton";
 import LoginButton from "../controls/LoginButton";
+import MemberButton from "../controls/MembershipButton";
 
 function Navbar({ isUser, isMember, isAdmin }) {
   return (
@@ -34,6 +35,14 @@ function NavButtonGroup({ isUser, isMember, isAdmin }) {
     return (
       <>
         <CommentButton />
+        <AccountButton />
+      </>
+    );
+  } else if (isUser) {
+    return (
+      <>
+        <CommentButton />
+        <MemberButton />
         <AccountButton />
       </>
     );

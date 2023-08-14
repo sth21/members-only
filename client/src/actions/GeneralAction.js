@@ -10,6 +10,10 @@ export default async function GeneralAction(request, fields, route) {
     submission[field] = data.get(field);
   });
 
+  console.log(submission);
+
+  console.log(JSON.stringify(submission));
+
   let json;
 
   try {
@@ -18,6 +22,7 @@ export default async function GeneralAction(request, fields, route) {
       headers: {
         "Content-Type": "application/json",
       },
+      credentials: "include",
       body: JSON.stringify(submission),
     });
 
@@ -25,8 +30,6 @@ export default async function GeneralAction(request, fields, route) {
   } catch (err) {
     console.log(err);
   }
-
-  console.log(json);
 
   // need to render error page
   if (!json || json.isFatal) {
