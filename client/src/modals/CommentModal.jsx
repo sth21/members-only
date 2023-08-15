@@ -14,8 +14,8 @@ function CommentModal() {
           <input type="text" name="commentTitle" id="commentTitle" required />
         </div>
         <div>
-          <label htmlFor="commentContent">Title</label>
-          <input
+          <label htmlFor="commentContent">Content</label>
+          <textarea
             type="text"
             name="commentContent"
             id="commentContent"

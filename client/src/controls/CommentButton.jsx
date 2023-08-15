@@ -1,7 +1,10 @@
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 function CommentButton({ setModal }) {
-  return <button onClick={() => setModal("Comment")}>Create Comment</button>;
+  const navigate = useNavigate();
+
+  return <button onClick={() => navigate("/comment")}>Create Comment</button>;
 }
 
 CommentButton.propTypes = {

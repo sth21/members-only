@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import Closeable from "./Closeable";
+import ModalForm from "./ModalForm";
 
 function MembershipModal() {
   return (
