@@ -1,5 +1,5 @@
 import { toast } from "react-toastify";
-import { redirect } from "react-router-dom";
+import { redirect, useSearchParams } from "react-router-dom";
 
 export default async function GeneralAction(request, fields, route) {
   const data = await request.formData();
@@ -9,10 +9,6 @@ export default async function GeneralAction(request, fields, route) {
   fields.forEach((field) => {
     submission[field] = data.get(field);
   });
-
-  console.log(submission);
-
-  console.log(JSON.stringify(submission));
 
   let json;
 

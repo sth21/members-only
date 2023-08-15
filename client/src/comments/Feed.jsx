@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import Comment from "./Comment";
 import HiddenComment from "./HiddenComment";
 
-function Feed({ isMember, comments }) {
+function Feed({ isMember, isAdmin, comments }) {
   if (comments.length === 0)
     return (
       <>
@@ -15,10 +15,13 @@ function Feed({ isMember, comments }) {
       <>
         {comments.map((comment) => (
           <Comment
+            key={comment._id}
+            isAdmin={isAdmin}
             title={comment.title}
             content={comment.content}
             time={comment.time}
             username={comment.username}
+            commentId={comment._id}
           />
         ))}
       </>
@@ -27,7 +30,7 @@ function Feed({ isMember, comments }) {
     return (
       <>
         {comments.map((comment) => (
-          <HiddenComment title={comment.title} />
+          <HiddenComment key={comment._id} title={comment.title} />
         ))}
       </>
     );
@@ -35,12 +38,14 @@ function Feed({ isMember, comments }) {
 
 Feed.propTypes = {
   isMember: PropTypes.bool,
+  isAdmin: PropTypes.bool,
   comments: PropTypes.arrayOf(
     PropTypes.shape({
       username: PropTypes.string,
       title: PropTypes.string,
       content: PropTypes.string,
-      time: PropTypes.instanceOf(Date),
+      time: PropTypes.string,
+      _id: PropTypes.string,
     })
   ),
 };

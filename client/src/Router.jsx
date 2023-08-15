@@ -5,6 +5,7 @@ import SignupModal from "./modals/SignupModal";
 import MembershipModal from "./modals/MembershipModal";
 import AdminModal from "./modals/AdminModal";
 import CommentModal from "./modals/CommentModal";
+import DeleteCommentModal from "./modals/DeleteCommentModal";
 import Layout from "./layout/Layout";
 import CommentLoader from "./loaders/CommentLoader";
 import UserLoader from "./loaders/UserLoader";
@@ -72,6 +73,21 @@ const router = createBrowserRouter([
             ["commentTitle", "commentContent"],
             "http://localhost:3000/comments/add"
           ),
+      },
+      {
+        path: "/comment/delete/:commentId",
+        element: <DeleteCommentModal />,
+        action: async ({ request, params }) => {
+          const url = "http://localhost:3000/comments/delete/".concat(
+            params.commentId
+          );
+          const res = await GeneralAction(
+            request,
+            ["removeCommentPassword"],
+            url
+          );
+          return res;
+        },
       },
     ],
   },

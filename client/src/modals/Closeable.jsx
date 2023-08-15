@@ -14,7 +14,10 @@ function Closeable({ children }) {
 }
 
 Closeable.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
+  ]),
 };
 
 export default Closeable;

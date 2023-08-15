@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import RemoveCommentButton from "../controls/RemoveCommentButton";
+import DeleteCommentButton from "../controls/DeleteCommentButton";
 
 function Comment({
   isAdmin = false,
@@ -7,6 +7,7 @@ function Comment({
   username = "",
   content = "",
   time = "",
+  commentId = "",
 }) {
   return (
     <div>
@@ -14,7 +15,7 @@ function Comment({
       <p>{username}</p>
       <p>{time}</p>
       <p>{content}</p>
-      {isAdmin ? <RemoveCommentButton /> : <></>}
+      {isAdmin ? <DeleteCommentButton commentId={commentId} /> : <></>}
     </div>
   );
 }
@@ -24,7 +25,8 @@ Comment.propTypes = {
   title: PropTypes.string,
   username: PropTypes.string,
   content: PropTypes.string,
-  time: PropTypes.instanceOf(Date),
+  time: PropTypes.string,
+  commentId: PropTypes.string,
 };
 
 export default Comment;

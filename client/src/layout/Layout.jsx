@@ -18,7 +18,7 @@ export default function Layout() {
       <ToastContainer autoClose={5000} />
       <Outlet />
       <Navbar isUser={isUser} isMember={isMember} isAdmin={isAdmin} />
-      <Feed comments={comments} isMember={isMember} />
+      <Feed comments={comments} isMember={isMember} isAdmin={isAdmin} />
     </>
   );
 }
