@@ -25,6 +25,10 @@ const router = createBrowserRouter([
     },
     children: [
       {
+        path: "/account",
+        element: <AccountModal />,
+      },
+      {
         path: "/login",
         element: <LoginModal />,
         action: async ({ request }) =>

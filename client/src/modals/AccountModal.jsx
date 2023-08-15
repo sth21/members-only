@@ -1,21 +1,24 @@
 import PropTypes from "prop-types";
 import LogoutButton from "../controls/LogoutButton";
 import Closeable from "./Closeable";
+import { useOutletContext } from "react-router-dom";
 
-function AccountModal({ currentUser }) {
+function AccountModal() {
+  const { isUser, isMember, isAdmin, username } = useOutletContext();
+
   return (
     <div>
       <div>
         <p>Signed in as</p>
-        <p>{currentUser.username}</p>
+        <p>{username}</p>
       </div>
       <div>
         <p>Membership status:</p>
-        <p>{currentUser.memberStatus ? "Is a member" : "Is not a member"}</p>
+        <p>{isMember ? "Is a member" : "Is not a member"}</p>
       </div>
       <div>
         <p>Admin status:</p>
-        <p>{currentUser.memberStatus ? "Is an admin" : "Is not an admin"}</p>
+        <p>{isAdmin ? "Is an admin" : "Is not an admin"}</p>
       </div>
       <LogoutButton />
     </div>
