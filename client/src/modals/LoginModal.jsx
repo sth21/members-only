@@ -3,6 +3,7 @@ import { useActionData } from "react-router-dom";
 import { useState } from "react";
 import Closeable from "./Closeable";
 import ModalForm from "./ModalForm";
+import { Field } from "../styled-components/modal";
 
 function LoginModal() {
   const errors = useActionData();
@@ -10,14 +11,14 @@ function LoginModal() {
   return (
     <Closeable>
       <ModalForm action="/login">
-        <div>
+        <Field>
           <label htmlFor="username">Username</label>
           <input type="text" name="username" id="username" required />
-        </div>
-        <div>
+        </Field>
+        <Field>
           <label htmlFor="password">Password</label>
           <input type="text" name="password" id="password" required />
-        </div>
+        </Field>
         <button type="submit">Submit</button>
       </ModalForm>
     </Closeable>

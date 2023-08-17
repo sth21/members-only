@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
+import { ModalBackground } from "../styled-components/modal";
 
 function Closeable({ children }) {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ function Closeable({ children }) {
     }
   }
 
-  return <div onClick={close}>{children}</div>;
+  return <ModalBackground onClick={close}>{children}</ModalBackground>;
 }
 
 Closeable.propTypes = {

@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
-import { Form } from "react-router-dom";
+import { Modal } from "../styled-components/modal";
 
 function ModalForm({ action, children }) {
   return (
-    <Form action={action} method="post">
+    <Modal action={action} method="post">
       {...children}
-    </Form>
+    </Modal>
   );
 }
 

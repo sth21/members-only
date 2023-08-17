@@ -2,12 +2,13 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import Closeable from "./Closeable";
 import ModalForm from "./ModalForm";
+import { Field } from "../styled-components/modal";
 
 function MembershipModal() {
   return (
     <Closeable>
       <ModalForm action="/membership">
-        <div>
+        <Field>
           <label htmlFor="membershipPassword">
             Membership Password (The Odin Project)
           </label>
@@ -17,7 +18,7 @@ function MembershipModal() {
             id="membershipPassword"
             required
           />
-        </div>
+        </Field>
         <button type="submit">Submit</button>
       </ModalForm>
     </Closeable>

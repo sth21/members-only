@@ -1,12 +1,13 @@
 import Closeable from "./Closeable";
 import ModalForm from "./ModalForm";
+import { Field } from "../styled-components/modal";
 
 export default function DeleteCommentModal() {
   return (
     <Closeable>
       <h2>Delete Comment</h2>
       <ModalForm>
-        <div>
+        <Field>
           <label htmlFor="removeCommentPassword">
             Removal Password (The Odin Project)
           </label>
@@ -16,7 +17,7 @@ export default function DeleteCommentModal() {
             id="removeCommentPassword"
             required
           />
-        </div>
+        </Field>
         <button type="submit">Submit</button>
       </ModalForm>
     </Closeable>

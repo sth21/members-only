@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { useActionData } from "react-router-dom";
 import Closeable from "./Closeable";
 import ModalForm from "./ModalForm";
+import { Field } from "../styled-components/modal";
 
 function CommentModal() {
   const errors = useActionData();
@@ -9,11 +10,11 @@ function CommentModal() {
   return (
     <Closeable>
       <ModalForm action="/comment">
-        <div>
+        <Field>
           <label htmlFor="commentTitle">Title</label>
           <input type="text" name="commentTitle" id="commentTitle" required />
-        </div>
-        <div>
+        </Field>
+        <Field>
           <label htmlFor="commentContent">Content</label>
           <textarea
             type="text"
@@ -21,7 +22,7 @@ function CommentModal() {
             id="commentContent"
             required
           />
-        </div>
+        </Field>
         <button type="submit">Submit</button>
       </ModalForm>
     </Closeable>
