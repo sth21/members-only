@@ -34,11 +34,11 @@ export default async function GeneralAction(request, fields, route) {
 
   // errors
   if (json.errors.length > 0) {
-    toast.error(json.msg, { position: toast.POSITION.TOP_RIGHT });
+    toast.error(json.msg);
     return json.errors;
   }
 
   // all good!
-  toast.success(json.msg, { position: toast.POSITION.TOP_RIGHT });
+  toast.success(json.msg);
   return redirect("/");
 }

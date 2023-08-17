@@ -12,7 +12,7 @@ export default function Layout() {
 
   return (
     <>
-      <ToastContainer autoClose={5000} />
+      <ToastContainer autoClose={5000} position="bottom-right" />
       <Outlet context={{ username, isUser, isAdmin, isMember }} />
       <Navbar isUser={isUser} isMember={isMember} isAdmin={isAdmin} />
       <Feed comments={comments} isMember={isMember} isAdmin={isAdmin} />
