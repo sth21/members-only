@@ -13,6 +13,7 @@ const NavBar = styled.nav`
   align-items: center;
   justify-items: start;
   grid-template-columns: 3fr 1fr;
+  margin-bottom: 2em;
 `;
 
 const ButtonGroup = styled.div`

@@ -1,12 +1,13 @@
 import PropTypes from "prop-types";
+import { CommentHeader, CommentWrapper } from "../styled-components/feed";
 
 function HiddenComment({ title }) {
   return (
-    <div>
-      <h2>{title}</h2>
+    <CommentWrapper>
+      <CommentHeader>{title}</CommentHeader>
       <p>by Anonymous</p>
       <p>Sign in to view posts</p>
-    </div>
+    </CommentWrapper>
   );
 }
 

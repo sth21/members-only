@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
 import DeleteCommentButton from "../controls/DeleteCommentButton";
+import { CommentHeader, CommentWrapper } from "../styled-components/feed";
+import moment from "moment";
 
 function Comment({
   isAdmin = false,
@@ -10,13 +12,13 @@ function Comment({
   commentId = "",
 }) {
   return (
-    <div>
-      <h2>{title}</h2>
-      <p>{username}</p>
-      <p>{time}</p>
+    <CommentWrapper>
+      <CommentHeader>{title}</CommentHeader>
+      <p>by: {username}</p>
+      <p>at: {moment(time).format("MMMM Do YYYY, h:mm:ss a")}</p>
       <p>{content}</p>
       {isAdmin ? <DeleteCommentButton commentId={commentId} /> : <></>}
-    </div>
+    </CommentWrapper>
   );
 }
 
