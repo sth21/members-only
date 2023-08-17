@@ -11,6 +11,7 @@ import CommentLoader from "./loaders/CommentLoader";
 import UserLoader from "./loaders/UserLoader";
 import ErrorPage from "./ErrorPage";
 import GeneralAction from "./actions/GeneralAction";
+import LogoutAction from "./actions/LogoutAction";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
       {
         path: "/account",
         element: <AccountModal />,
+        action: async ({ request }) => await LogoutAction(),
       },
       {
         path: "/login",

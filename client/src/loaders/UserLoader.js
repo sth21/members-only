@@ -3,9 +3,7 @@ export default async function UserLoader() {
     mode: "cors",
     credentials: "include",
   });
+
   const data = await req.json();
-
-  console.log(data);
-
   return data;
 }

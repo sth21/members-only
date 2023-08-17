@@ -31,4 +31,6 @@ const Field = styled.div`
   justify-content: flex-start;
 `;
 
+const Input = styled.input``;
+
 export { ModalBackground, Modal, Field };

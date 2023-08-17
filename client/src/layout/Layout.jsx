@@ -10,8 +10,6 @@ export default function Layout() {
   const { user, comments } = useLoaderData();
   const { username, isUser, isMember, isAdmin } = user;
 
-  console.log(user);
-
   return (
     <>
       <ToastContainer autoClose={5000} />

@@ -24,7 +24,7 @@ export default async function GeneralAction(request, fields, route) {
 
     json = await response.json();
   } catch (err) {
-    console.log(err);
+    return err;
   }
 
   // need to render error page
